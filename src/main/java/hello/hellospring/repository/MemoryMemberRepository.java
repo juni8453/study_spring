@@ -1,13 +1,9 @@
 package hello.hellospring.repository;
 
 import hello.hellospring.domain.Member;
-import org.springframework.stereotype.Repository;
-import org.springframework.stereotype.Service;
 
 import java.util.*;
 
-// Repository 어노테이션으로 MemoryMemberRepository 객체를 스프링 빈으로 등록한다.
-@Repository
 public class MemoryMemberRepository implements MemberRepository {
 
     private final Map<Long, Member> store = new HashMap<>();
