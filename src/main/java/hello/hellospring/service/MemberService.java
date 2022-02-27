@@ -2,18 +2,19 @@ package hello.hellospring.service;
 
 import hello.hellospring.domain.Member;
 import hello.hellospring.repository.MemberRepository;
-import hello.hellospring.repository.MemoryMemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+// Service 어노테이션으로 MemberService 객체를 스프링 빈으로 등록한다.
+// MemberService 객체는 MemberRepository 객체에 의존성을 가진다.
+@Service
 public class MemberService {
-
-    // 필드 생성 (필드로 생성해서 외부 객체로 쓰는 것은 외부 변화에 취약하기 때문에 객체지향적이지 못하다.)
-//    private final MemberRepository memberRepository = new MemoryMemberRepository();
-
     private final MemberRepository memberRepository;
 
+    @Autowired
     MemberService(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
