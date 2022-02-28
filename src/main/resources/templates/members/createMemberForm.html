@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>회원 가입</title>
+    <title>Member Form</title>
 </head>
 <body>
     <div class="container">
         <form action="/members/new" method="post">
             <div class="form-group">
                 <label for="name">이름</label>
-                <!-- input tag에서 name Parameter의 key값이 되어 서버로 값을 보낸다.-->
-                <input type="text" id="name" name="name" placeholder="이름을 입력하세요.">
+
+                <!-- name 이 가장 중요한데, 이 값이 Key 값으로 서버에 전송되는 값이다.-->
+                <input type="text" id="name" name="name" placeholder="이름을 입력하세요">
+
             </div>
             <button type="submit">등록</button>
         </form>
